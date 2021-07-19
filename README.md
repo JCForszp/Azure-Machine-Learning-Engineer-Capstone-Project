@@ -46,3 +46,42 @@
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+
+
+## Udacity mentor helpers  
+
+### Step 2: Model Training and Deployment  
+
+**HyperDrive**  
+- I have finished all the TODOS in the hyperparameter_tuning.ipynb file  
+- I have used one type of sampling method: grid sampling, random sampling or Bayesian sampling  
+- Specify an early termination policy (not required in case of Bayesian sampling)  
+- I have tuned at least 2 hyperparameters in my model  
+- I have visualized the progress and performance of my hyperparameter runs (Logs metrics during the training process)  
+- I have saved the best model from all the hyperparameter runs  
+- Take a screenshot of the RunDetails widget that shows the progress of the training runs of the different experiments  
+- Take a screenshot of the best model with its run id and the different hyperparameters that were tuned  
+
+**AutoML**  
+- I have finished all lhe TODOs in the automl.ipynb file  
+- Take a screenshot of the RunDetails widget that shows the progress of the training runs of the different experiments  
+- Take a screenshot of the best model with its run id  
+
+**Deployment of the best model**  
+- I have deployed 
+ as a webservice
+- I have tested the webservice by sending a request to the model endpoint
+- I have deleted webservice and shut down all the computes that I have used
+- Take a screenshot showing the model endpoint as active
+
+
+### Step 3: Complete the README  
+- I have completed all of the required TODOs in the README file
+
+
+### Step 5: Create a screencast  
+- A working model
+- Demo of the deployed model
+- Demo of a sample request sent to the endpoint and its response 
+- Demo of any additional feature of your model 
+- Add the screencast link to the README file
