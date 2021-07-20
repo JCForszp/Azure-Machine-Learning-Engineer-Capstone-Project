@@ -11,15 +11,15 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
 # Create TabularDataset using TabularDatasetFactory
-df = TabularDatasetFactory.from_delimited_files(path="'https://github.com/JCForszp/nd00333-capstone/blob/master/Datasets/heart_failure_clinical_records_dataset.csv'")
-
+ds = TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/JCForszp/nd00333-capstone/master/Datasets/heart_failure_clinical_records_dataset.csv")
+df=ds.to_pandas_dataframe()
 
 # Data columns
 
 cols_list = list(df.columns)
 y_cols=cols_list.pop()  # target label is located at the end of the list -> pop()
 x_cols=cols_list
-x = df[x_cols]; y = ds[y_cols]
+x = df[x_cols]; y = df[y_cols]
 
 # Split data into train and test sets (80/20 basis).
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
