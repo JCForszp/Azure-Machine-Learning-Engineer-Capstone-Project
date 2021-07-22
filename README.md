@@ -13,7 +13,7 @@
 *TODO*: Explain about the data you are using and where you got it from.
 
 ![image](https://user-images.githubusercontent.com/36628203/126629671-cd6cd9e0-b8d3-4be1-97f9-0f3247ca2f6b.png)
-Source: [BMC Medical Informatics and Decision Making](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-1023-5/tables/1)
+Source: [BMC Medical Informatics and Decision Making](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-1023-5/tables/1), published: 03 February 2020
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
