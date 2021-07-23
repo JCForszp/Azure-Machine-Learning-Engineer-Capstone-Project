@@ -31,7 +31,8 @@ The graph below summarizes the different phases of this project:
 ## Project Set Up and Installation
 For this project, we will use a CPU-based Compute Instance (Neural Nets are scoped out) configured using Azure Standard_DS3_v2 general purpose profile (4 cores, 14GB RAM, 28GB storage), meant for classifcal ML model training, AutoML runs and pipeline runs.  
 
-The notebooks and python script necessary to re-run the 2 steps above (HyperDrive & AutoML) have been stored in the folder ["Scripts & notebooks"](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/tree/master/Scripts%20%26%20notebooks). Please note that the notebook [hyperparameter_tuning.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/hyperparameter_tuning.ipynb) requires the python script [Train.py](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/train.py)
+The notebooks and python script necessary to re-run the 2 steps above (HyperDrive & AutoML) have been stored in the folder ["Scripts & notebooks"](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/tree/master/Scripts%20%26%20notebooks). Each step has been handled as separate experiments. The first run corresponds to the HyperDrive run. It requires the notebook [hyperparameter_tuning.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/hyperparameter_tuning.ipynb) as well as the python script [Train.py](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/train.py).  
+The second experiment (AutoML), only requires the [AutoML.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/automl.ipynb) notebook.   
 
 
 ## Dataset
@@ -72,10 +73,26 @@ A correlation matrix shows only weak correlations between features and no missin
 
 So, the Kaggle / BMC dataset has a good overall quality and is suitable for our analysis.  
 
+### Importing the Kaggle dataset into Azure ML studio  
+The BMC [dataset](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Datasets/heart_failure_clinical_records_dataset.csv) whas unpacked and saved in a dedicated [folder](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/tree/master/Datasets).  
+I accessed the raw version directly from the web-link and imported it into my Azure workspace using command `Dataset.Tabular.from_delimited_files(example_data)`, where the variable "example_data" contained the http: link to the dataset on my Github repo.  
 
-### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.  
-We are dealing here with a classification task, i.e trying to predict the outcome of the follow-up period based on the given clinical features.
+Below the details of the registered dataset:
+![image](https://user-images.githubusercontent.com/36628203/126833631-99321462-4455-44c3-b2f7-41fd7873070b.png)  
+
+For the first experiment (HyperDrive), only the command in the python script is actually needed.  
+I used the `Dataset.Tabular.from_delimited_files()` command to benefit from Azure data wrangling facilities. The dataset is then immediately converted into a pandas dataframe format to be fed to the Sk-learn Train-Test-split function and model. 
+The notebook of the first experiment also contains a dataset import section. This was only done to be used as template for the automl.ipynb notebook, but is not necessary stricto-sensu and can be overlooked.
+
+
+### Tasks
+The target feature is a binary variable (life or death).  
+We are dealing here with a classification task, i.e trying to predict the outcome of the follow-up period, based on the given clinical features.
+As mentioned in the project-overview, the aim of this project is:   
+> 1. to train models on the same BMC dataset, using separate HyperDrive and AutoML experiments,   
+> 2. keep, from the both experiments, the model that reached the highest accuracy,  
+> 3. deploy it and, last,  
+> 4. feed the endpoint with a new json request to obtain the prediction(s). 
 
 
 
