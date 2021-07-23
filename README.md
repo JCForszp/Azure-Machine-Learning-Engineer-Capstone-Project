@@ -31,6 +31,9 @@ The graph below summarizes the different phases of this project:
 ## Project Set Up and Installation
 For this project, we will use a CPU-based Compute Instance (Neural Nets are scoped out) configured using Azure Standard_DS3_v2 general purpose profile (4 cores, 14GB RAM, 28GB storage), meant for classifcal ML model training, AutoML runs and pipeline runs.  
 
+The notebooks and python script necessary to re-run the 2 steps above (HyperDrive & AutoML) have been stored in the folder ["Scripts & notebooks"](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/tree/master/Scripts%20%26%20notebooks). Please note that the notebook [hyperparameter_tuning.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/hyperparameter_tuning.ipynb) requires the python script [Train.py](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/train.py)
+
+
 ## Dataset
 
 ### Overview
@@ -71,8 +74,9 @@ So, the Kaggle / BMC dataset has a good overall quality and is suitable for our 
 
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.  
 We are dealing here with a classification task, i.e trying to predict the outcome of the follow-up period based on the given clinical features.
+
 
 
 ### Access
