@@ -1,8 +1,30 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
+This capstone project is the third and last of Udacity's "Machine Learning Engineer with Microsoft Azure" nanodegree program.  
+The aim of this project is to compare two models: one based on a given algorithm whose hyperparameters are tuned using HyperDrive, and a second one chosen and optimized using the "Automated ML" (denoted as AutoML from now on) using the same metric ('accuracy' in our case). 
 
-# Your Project Title Here
 
-*TODO:* Write a short introduction to your project.
+# Predicting survival of patients with heart failure.  
+
+As stated in [BMC Medical Informatics and Decision Making](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-020-1023-5#Sec10), "Cardiovascular diseases kill approximately 17 million people globally every year, and they mainly exhibit as myocardial infarctions and heart failures. Heart failure (HF) occurs when the heart cannot pump enough blood to meet the needs of the body."  
+
+The aim of this project is to train models on a dataset of 299 patients and 13 features collected in 2015 that can predict, with the highest accuracy, the survival of patients with heart failures up to the end of the follow-up period.  
+
+The method used to determine the best model is to compare the best-of-classe candidates using a common metric: 'accuracy', i.e the total number of correct predictions over the total number of predictions. We will take the best model identified by the 2 tools available in Azure Machine Learning Studio.  
+
+> Tool 1: Hyperdrive  
+> In this scenario, we provide the model we chose ("Logistics Regression") and we ask HyperDrive to determine the set of hyperparameters that maximizes the accuracy.  
+
+> Tool 2: AutoML  
+> With AutoML, we let Azure run through a portfolio of models, optimize each one of them and select the model with the highest accuracy. 
+
+Once the best model is identified, we will deploy it and consume the corresponding endpoint to check that our web service is able to accept json requests that contain the values of 13 medical features for one or a group of patient, and send back a prediction of the patients' survival.  
+(NB: the model will send back a binary answer, i.e 'will probably survive' or 'will probably die', but it won't send back the probabilities behind those predictions)  
+
+The graph below summarizes the different phases of this project:
+
+![image](https://user-images.githubusercontent.com/36628203/126818290-a8ba04c3-2855-43a3-bd71-2c2e73f41a88.png)
+
+
+
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
