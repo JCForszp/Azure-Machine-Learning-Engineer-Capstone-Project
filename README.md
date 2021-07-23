@@ -146,7 +146,7 @@ Three types of tasks are allowed here:'classification', 'regression', or 'foreca
 As mentioned in the Dataset section, we are clearly here in a classification task.  
 - **training_data**=dataset,  
 This is the dataset we registered in previous cell.  
-- **label_column_name**='0DEATH_EVENT',  
+- **label_column_name**='DEATH_EVENT',  
 This is the name of the target column, i.e the column we will are training our model to predict.    
 The original dataset on Kaggle clearly defines 'DEATH_EVENT' as being the label column.  
 - **path** = project_folder,  
