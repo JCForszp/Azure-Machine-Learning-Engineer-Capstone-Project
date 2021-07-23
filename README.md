@@ -164,32 +164,32 @@ We are dealing with a small-sized dataset, so I chose to leave this setting of F
 Brings the automl_settings dictionary we defined above in the automl_config object.  
 
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
-**Results obtained**:
-The AutoML experiment run came out with a Voting Ensemble model, and an accuracy of 0.88972, as shown on the Azure Machine Learning Studio:  
-![image](https://user-images.githubusercontent.com/36628203/126847833-48f120b2-b072-42c6-9397-a5b3dc3c4c47.png)
 
-**Parameters of the model**
+**Results obtained**:  
+The AutoML experiment run came out with a Voting Ensemble model, and an accuracy of 0.88972, as shown on the Azure Machine Learning Studio:  
+![image](https://user-images.githubusercontent.com/36628203/126847833-48f120b2-b072-42c6-9397-a5b3dc3c4c47.png)  
+
+**Parameters of the model**  
 ![image](https://user-images.githubusercontent.com/36628203/126847135-59d0a876-c578-47e2-b2ff-5982273853b4.png)
 
 **Possible ways to improve it**  
 Probably, the most interesting would be to bring neural nets into the game and see how they would do, compared to the Voting Ensemble outcome (0.89).  
-It can't be added at this stage, as NN require a GPU-based compute instance to produce the analysis within reasonable time. 
+It can't be added at this stage, as NN require a GPU-based compute instance to produce the analysis within reasonable time.  
 
-**RunDetails widget**:
+**RunDetails widget**:  
 ![image](https://user-images.githubusercontent.com/36628203/126846146-2806dd50-04a9-4134-89e2-b5bcbe616bd9.png)
 
-**Best model trained with its parameters:**
+**Best model trained with its parameters:**  
 
-- From Azure Machine Learning Studio:
+- From Azure Machine Learning Studio:  
 ![image](https://user-images.githubusercontent.com/36628203/126846771-cad0d3f6-477b-4a19-9fc4-68c546f83295.png)
 ![image](https://user-images.githubusercontent.com/36628203/126846369-5bcb4aaf-c805-4d0b-9855-c8dc5dff2986.png)
 
-- From the AutoML notebook:
-![image](https://user-images.githubusercontent.com/36628203/126846935-8da862bb-992b-46a0-9d81-a7fa5a9470d0.png)
-(full details in notebook [AutoML.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/automl.ipynb)
+- From the AutoML notebook:  
+![image](https://user-images.githubusercontent.com/36628203/126846935-8da862bb-992b-46a0-9d81-a7fa5a9470d0.png)  
+(full details in notebook [AutoML.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/automl.ipynb)  
 
-## Hyperparameter Tuning
+## Hyperparameter Tuning  
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
 
