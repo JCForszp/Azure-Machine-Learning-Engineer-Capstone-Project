@@ -255,6 +255,7 @@ We can obtain a similar level of detail in Azure Machine Learning Studio:
 It seems that we reached a "plateau" using a Logistics Regression model.   
 When looking at the child runs, 0.833 seems to be the maximum achievable value.  
 We can still attempt to replace random sampling by grid search to see if we can 'squeeze' some more accuracy,  
+and increase the maximum number of iterations (hyperparameter 'max_iter' to 300 or even 500)
 but it seems improbable that we will get an accuracy greater than the one determined by AutoML.  
 
 ### Saving & Registering
@@ -265,7 +266,16 @@ The code below registers the model optimized by HyperDrive, even if it's clear t
 
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+### Overview of the deployed model
+Below the screenshot that shows the deploymment of the AutoML model and its deployment status ('healthy'):
+![image](https://user-images.githubusercontent.com/36628203/126879339-f7c8abe3-3582-4371-b9da-d8fc928ea13c.png)
+![image](https://user-images.githubusercontent.com/36628203/126879402-dea754d9-981a-4443-abe8-59d00e4d5269.png)
+
+# Instructions on how to query the endpoint
+
+
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
@@ -297,8 +307,7 @@ The code below registers the model optimized by HyperDrive, even if it's clear t
 - Take a screenshot of the best model with its run id  
 
 **Deployment of the best model**  
-- I have deployed 
- as a webservice
+- I have deployed as a webservice
 - I have tested the webservice by sending a request to the model endpoint
 - I have deleted webservice and shut down all the computes that I have used
 - Take a screenshot showing the model endpoint as active
