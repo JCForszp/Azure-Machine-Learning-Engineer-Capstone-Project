@@ -189,14 +189,80 @@ It can't be added at this stage, as NN require a GPU-based compute instance to p
 ![image](https://user-images.githubusercontent.com/36628203/126846935-8da862bb-992b-46a0-9d81-a7fa5a9470d0.png)  
 (full details in notebook [AutoML.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/automl.ipynb)  
 
+### Saving & Registering
+
+We finish the AutoML run by saving & registering the best model, which is called 'fitted model' in our case:  
+![image](https://user-images.githubusercontent.com/36628203/126879042-d79d2f7b-9ded-41fe-9eeb-05df4ebbae26.png)
+
+
+
+
 ## Hyperparameter Tuning  
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search  
+
+For this part of the project, I chose a Logistic Regression model that fits well binary classification problems.  
+Features are weakly correlated and the presence of categorical variables (anemia, diabetes, sex) is supported by this algorithm.  
+So, LR seems well suited.  
+
+The aim here is to fine-tune the model hyper-parameters using Azure HyperDrive. HyperDrive configuration will be split below into 3 sections:  
+1. early termination policy  
+2. creation of the estimator and of the different parameters that will be used during the training  
+3. the hyper drive configuration run in itself  
+
+We are going to comment the following piece of code:  
+![image](https://user-images.githubusercontent.com/36628203/126878639-5f01bc8a-8354-4be8-967a-1299409a1dc6.png)
+
+### 1. early_termination_policy
+Regarding early termination of poorly performing runs, I used the BanditPolicy.
+The BanditPolicy defines a slack factor (defined here to 0.1).
+All runs that fall outside the slack factor with respect to the best performing run will be terminated, saving time and budget.
+
+### 2. estimator and parameters sampling  
+**estimator**  
+> We will use a Logistic Regression and use 'accuracy'.  
+> AuC would also have been an option.  
+
+**Hyperparameter space**  
+> I chose the RandomParameterSampling, mainly for speed reason, as the usual alternative, GridParameterSampling, would have triggered  
+> an exhaustive search over the complete space, for a gain that proved to be relatively small at the end.  
+> Also, GridParameterSampling only allows discrete values, while random sampling is more open as it allows also the use of continuous values.  
+> Finally, RandomParameterSampling supports early termination of low-performance runs.  
+> For those three reasons, and within the given context of this analysis, RandomParameterSampling appeared as the best option.  
+**Note on setting values for the 'Inverse of regularization strength' ("C") and 'max_iter'**  
+> I started from the default value of each of those settings, ie. '1' for "C" and '100' for 'max_iter'.    
+> C is a continuous variable, so I chose to let Hyperdrive pick float values in a range centered on 1, and with values distributed according to a uniform law.  
+> for max_iter, as we are dealing with integers (maximum number of iterations taken for the solvers to converge), I let Hyperdrive pick integer values in a range centered on the default value again (100 +/-50). 
+
+### 3. HyperDrive run configuration  
+This configuration object aggregates the settings defined for the policy, the choice of estimator and the hyper-parameters space definition.  
+We define here also the primary metric used ('accuracy') that we want to maximize (primary_metric_goal).  
+max_total_runs sets a limit of the maximum number of runs that can be created. We set it here to 100.  
+max_concurrent_runs is aligned to the compute target available resources available (4).  
+
+### Results  
+
+We can see below the best run metrics that shows the outcome (accuracy) as well as the corresponding hyperparameters:  
+![image](https://user-images.githubusercontent.com/36628203/126878735-19f61f63-33cc-4de9-9085-db48ca6d7bba.png)  
+We are significantly below the accuracy reached by AutoML, so this is not the model we are going to deploy.  
+
+The RunDetails widget allow to see the accuracy per child run (on the left side, column 'Best Metric'), as well as the related hyperparameters (last two columns on the right).  
+![image](https://user-images.githubusercontent.com/36628203/126878827-b7bc46b2-e18a-4dd7-9a8b-56e2c8c3f215.png)
+
+We can obtain a similar level of detail in Azure Machine Learning Studio:  
+![image](https://user-images.githubusercontent.com/36628203/126878877-0bad4b13-378e-41df-9dec-8702c84680e2.png)
+
+**Improvements**  
+It seems that we reached a "plateau" using a Logistics Regression model.   
+When looking at the child runs, 0.833 seems to be the maximum achievable value.  
+We can still attempt to replace random sampling by grid search to see if we can 'squeeze' some more accuracy,  
+but it seems improbable that we will get an accuracy greater than the one determined by AutoML.  
+
+### Saving & Registering
+The code below registers the model optimized by HyperDrive, even if it's clear that's not going to be the one we will deploy in the next section:  
+![image](https://user-images.githubusercontent.com/36628203/126879168-1d6fac8d-7364-425b-8a65-253e27d1fbc6.png)
 
 
-### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
