@@ -283,6 +283,10 @@ Below the screenshot that shows the deploymment of the AutoML model and its depl
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
 
+01. [HyperDrive Experiment demo](https://youtu.be/BntDQjLNIME)
+02. [AutoML Experiment demo](https://youtu.be/p_qk5BFxTaI)
+03. [Deployment & demo of the webservice](https://youtu.be/JJqE7ZWk65Q)
+
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
 
