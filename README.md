@@ -273,57 +273,35 @@ Below the screenshot that shows the deploymment of the AutoML model and its depl
 ![image](https://user-images.githubusercontent.com/36628203/126879402-dea754d9-981a-4443-abe8-59d00e4d5269.png)
 
 # Instructions on how to query the endpoint
+I chose not to create a request manually, but to send a batch of 10 requests picked at random from the dataset.
+Generating such request could be done in a single line:  
+![image](https://user-images.githubusercontent.com/36628203/127027798-ac08ac4e-cc59-47de-a557-7a39478edbc2.png)
+The first instruction, `df.sample(10)`, picks 10 records from the pandas dataframe we created earlier.  
+Please note that, at this stage, the target column is already removed, so we have records ready to be inputted to the webservice.  
+We convert this selection of 10 records into a dictionary format using the command `.to_dict(orient='records')`.   
+Finally, we convert this dictionary into the json format (`input_data`) we need to post our request:   
+![image](https://user-images.githubusercontent.com/36628203/127028468-e1543519-9f53-40df-8dfb-1c27dd8e08ee.png)  
 
+The scoring_uri is directly provided by Azure when the web service is activated, using the command `webservice.scoring_uri`.  
+The screenshot above shows that we receive a list of 10 answers, 0 ('lived') or 1('died'), one per record.   
 
+This method of querying the endpoint can be easily adapted to generate a request from any pandas dataframe.  
+When replacing the `.sample()` command by `.loc[]` or `.iloc[]`, any record or group of record from a given dataset can be used to generate a request. 
 
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+
+You will find below 3 videos that demo each of the 3 parts of this capstone project, including the demo of the working models and the demo of a sample request sent to the endpoint and its response:  
 
 01. [HyperDrive Experiment demo](https://youtu.be/BntDQjLNIME)
 02. [AutoML Experiment demo](https://youtu.be/p_qk5BFxTaI)
 03. [Deployment & demo of the webservice](https://youtu.be/JJqE7ZWk65Q)
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+As mentioned in the section related to the query of the endpoint, I chose not to generate a manual request, but to build one from an existing Dataframe.  
+In a production environment, the json payload will either be built dynamically by a routine, or, most probably - to keep track of the requests sent and the answers received, from pre-existing records, stored in an already existing data structure.  
 
+I succeeded to generate a request dynamically.  Now, I will keep looking at the response.  
+As shown on the screenshot (below for convenience), the webservice sends back a list of answers in a dict (unique key "result"), but the whole answer is sent back as a string (see the quotes below).   
+![image](https://user-images.githubusercontent.com/36628203/127030403-e235c509-66b2-445c-9d7e-25cd57c89491.png)
 
-## Udacity mentor helpers  
-
-### Step 2: Model Training and Deployment  
-
-**HyperDrive**  
-- I have finished all the TODOS in the hyperparameter_tuning.ipynb file  
-- I have used one type of sampling method: grid sampling, random sampling or Bayesian sampling  
-- Specify an early termination policy (not required in case of Bayesian sampling)  
-- I have tuned at least 2 hyperparameters in my model  
-- I have visualized the progress and performance of my hyperparameter runs (Logs metrics during the training process)  
-- I have saved the best model from all the hyperparameter runs  
-- Take a screenshot of the RunDetails widget that shows the progress of the training runs of the different experiments  
-- Take a screenshot of the best model with its run id and the different hyperparameters that were tuned  
-
-**AutoML**  
-- I have finished all lhe TODOs in the automl.ipynb file  
-- Take a screenshot of the RunDetails widget that shows the progress of the training runs of the different experiments  
-- Take a screenshot of the best model with its run id  
-
-**Deployment of the best model**  
-- I have deployed as a webservice
-- I have tested the webservice by sending a request to the model endpoint
-- I have deleted webservice and shut down all the computes that I have used
-- Take a screenshot showing the model endpoint as active
-
-
-### Step 3: Complete the README  
-- I have completed all of the required TODOs in the README file
-
-
-### Step 5: Create a screencast  
-- A working model
-- Demo of the deployed model
-- Demo of a sample request sent to the endpoint and its response 
-- Demo of any additional feature of your model 
-- Add the screencast link to the README file
