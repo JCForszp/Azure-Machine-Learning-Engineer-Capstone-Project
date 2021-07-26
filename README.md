@@ -305,3 +305,6 @@ I succeeded to generate a request dynamically.  Now, I will keep looking at the 
 As shown on the screenshot (below for convenience), the webservice sends back a list of answers in a dict (unique key "result"), but the whole answer is sent back as a string (see the quotes below).   
 ![image](https://user-images.githubusercontent.com/36628203/127030403-e235c509-66b2-445c-9d7e-25cd57c89491.png)
 
+So, the next piece of code will be to update the source dataframe with the answer received from the webservice.  
+That will give us the ability to match predicted vs actual survivals, and determine if we have **data drift** and assess if the model performance remains reasonable or needs to be retrained.
+
