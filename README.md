@@ -72,6 +72,9 @@ A correlation matrix shows only weak correlations between features and no missin
 ![image](https://user-images.githubusercontent.com/36628203/126821310-83152bb8-12c3-4010-bc18-24f442237f22.png)
 
 So, the Kaggle / BMC dataset has a good overall quality and is suitable for our analysis.  
+This is, by the way, confirmed by the AutoML run "Data Guardrails" analysis, below:  
+![image](https://user-images.githubusercontent.com/36628203/127145164-acd3f342-e068-495d-9953-782c1d0ee110.png)
+
 
 ### Importing the Kaggle dataset into Azure ML studio  
 The BMC [dataset](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Datasets/heart_failure_clinical_records_dataset.csv) whas unpacked and saved in a dedicated [folder](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/tree/master/Datasets).  
