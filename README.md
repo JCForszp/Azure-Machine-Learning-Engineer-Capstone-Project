@@ -172,8 +172,10 @@ Brings the automl_settings dictionary we defined above in the automl_config obje
 
 **Results obtained**:  
 The AutoML experiment run came out with a Voting Ensemble model, and an accuracy of 0.87633, as shown on the Azure Machine Learning Studio:  
-![image](https://user-images.githubusercontent.com/36628203/127149386-23f4b135-e529-4177-a838-d2eba3ba4971.png)
-Screenshot of the best model from the ML Studio 
+![image](https://user-images.githubusercontent.com/36628203/127149386-23f4b135-e529-4177-a838-d2eba3ba4971.png)  
+
+**Screenshot of the best model from the ML Studio**   
+
 ![image](https://user-images.githubusercontent.com/36628203/127149319-128a2859-6d49-47b4-81e9-88c13a8c1fd8.png)
 
 
@@ -185,18 +187,22 @@ Probably, the most interesting would be to bring neural nets into the game and s
 It can't be added at this stage, as NN require a GPU-based compute instance to produce the analysis within reasonable time.  
 
 **RunDetails widget**:  
-![image](https://user-images.githubusercontent.com/36628203/126846146-2806dd50-04a9-4134-89e2-b5bcbe616bd9.png)
+![image](https://user-images.githubusercontent.com/36628203/127156612-d41ac251-8506-47bd-9756-f5d67da299fd.png)
+![image](https://user-images.githubusercontent.com/36628203/127156957-5020ad1f-ab53-4173-80ff-bd78718c976a.png)
+
 
 **Best model trained with its parameters:**  
 
 - From Azure Machine Learning Studio:  
 ![image](https://user-images.githubusercontent.com/36628203/127148541-73d0a2a7-f042-40df-a6fa-f7328e06b854.png)
 ![image](https://user-images.githubusercontent.com/36628203/126846771-cad0d3f6-477b-4a19-9fc4-68c546f83295.png)
-![image](https://user-images.githubusercontent.com/36628203/126846369-5bcb4aaf-c805-4d0b-9855-c8dc5dff2986.png)
+![image](https://user-images.githubusercontent.com/36628203/127157642-2da046a7-3c7d-4709-b878-9771a4f21944.png)  
+
 
 - From the AutoML notebook:  
-![image](https://user-images.githubusercontent.com/36628203/126846935-8da862bb-992b-46a0-9d81-a7fa5a9470d0.png)  
+![image](https://user-images.githubusercontent.com/36628203/127158740-de168a6e-e0d7-4355-84f9-6444f21e2130.png)  
 (full details in notebook [AutoML.ipynb](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Scripts%20%26%20notebooks/automl.ipynb)  
+![image](https://user-images.githubusercontent.com/36628203/127158441-17429cb0-bb45-4db7-a9fa-9b6aa6cfd2f1.png)
 
 ### Saving & Registering
 
