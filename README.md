@@ -208,7 +208,17 @@ It can't be added at this stage, as NN require a GPU-based compute instance to p
 
 We finish the AutoML run by saving & registering the best model, which is called 'fitted model' in our case:  
 ![image](https://user-images.githubusercontent.com/36628203/126879042-d79d2f7b-9ded-41fe-9eeb-05df4ebbae26.png)
+The model is now fully registered:  
+![image](https://user-images.githubusercontent.com/36628203/127166171-c37e28d5-00a3-4431-959a-9de0849c3626.png)
 
+For the reproducibility of the experiment, we also download the environment details:  
+
+A copy of the conda environment details is stored in the [Environment Details folder](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Environment%20details/env.yml)  
+
+![image](https://user-images.githubusercontent.com/36628203/127167223-6a02ab84-e53e-4500-8900-c3910e8087a1.png)
+
+The second file, [dependencies.yml](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Environment%20details/dependencies.yml) contains all the versions used for the experiment, e.g the pandas or sk-learn version.  
+![image](https://user-images.githubusercontent.com/36628203/127167940-85b60e7d-e66a-4d63-ba4f-2b4a24b699dd.png)
 
 
 
