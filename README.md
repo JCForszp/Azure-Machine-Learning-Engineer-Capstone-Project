@@ -166,11 +166,16 @@ We are dealing with a small-sized dataset, so I chose to leave this setting of F
 - **automl_settings**  
 Brings the automl_settings dictionary we defined above in the automl_config object.  
 
-### Results
+### Results  
+
+![image](https://user-images.githubusercontent.com/36628203/127148373-2d0ec59d-a3e0-4f54-b81c-f82488e8b2b5.png)
 
 **Results obtained**:  
-The AutoML experiment run came out with a Voting Ensemble model, and an accuracy of 0.88972, as shown on the Azure Machine Learning Studio:  
-![image](https://user-images.githubusercontent.com/36628203/126847833-48f120b2-b072-42c6-9397-a5b3dc3c4c47.png)  
+The AutoML experiment run came out with a Voting Ensemble model, and an accuracy of 0.87633, as shown on the Azure Machine Learning Studio:  
+![image](https://user-images.githubusercontent.com/36628203/127149386-23f4b135-e529-4177-a838-d2eba3ba4971.png)
+Screenshot of the best model from the ML Studio 
+![image](https://user-images.githubusercontent.com/36628203/127149319-128a2859-6d49-47b4-81e9-88c13a8c1fd8.png)
+
 
 **Parameters of the model**  
 ![image](https://user-images.githubusercontent.com/36628203/126847135-59d0a876-c578-47e2-b2ff-5982273853b4.png)
@@ -185,6 +190,7 @@ It can't be added at this stage, as NN require a GPU-based compute instance to p
 **Best model trained with its parameters:**  
 
 - From Azure Machine Learning Studio:  
+![image](https://user-images.githubusercontent.com/36628203/127148541-73d0a2a7-f042-40df-a6fa-f7328e06b854.png)
 ![image](https://user-images.githubusercontent.com/36628203/126846771-cad0d3f6-477b-4a19-9fc4-68c546f83295.png)
 ![image](https://user-images.githubusercontent.com/36628203/126846369-5bcb4aaf-c805-4d0b-9855-c8dc5dff2986.png)
 
