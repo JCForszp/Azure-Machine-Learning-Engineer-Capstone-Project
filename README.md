@@ -218,7 +218,9 @@ A copy of the conda environment details is stored in the [Environment Details fo
 ![image](https://user-images.githubusercontent.com/36628203/127167223-6a02ab84-e53e-4500-8900-c3910e8087a1.png)
 
 The second file, [dependencies.yml](https://github.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/blob/master/Environment%20details/dependencies.yml) contains all the versions used for the experiment, e.g the pandas or sk-learn version.  
-![image](https://user-images.githubusercontent.com/36628203/127167940-85b60e7d-e66a-4d63-ba4f-2b4a24b699dd.png)
+![image](https://user-images.githubusercontent.com/36628203/127167940-85b60e7d-e66a-4d63-ba4f-2b4a24b699dd.png)  
+
+I finally saved the [config.json](https://user-images.githubusercontent.com/36628203/127149319-128a2859-6d49-47b4-81e9-88c13a8c1fd8.png) file needed to post a request from the shell.  
 
 
 
