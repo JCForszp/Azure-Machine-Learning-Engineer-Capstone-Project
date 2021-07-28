@@ -273,10 +273,18 @@ We can see below the best run metrics that shows the outcome (accuracy) as well 
 We are significantly below the accuracy reached by AutoML, so this is not the model we are going to deploy.  
 
 The RunDetails widget allow to see the accuracy per child run (on the left side, column 'Best Metric'), as well as the related hyperparameters (last two columns on the right).  
-![image](https://user-images.githubusercontent.com/36628203/126878827-b7bc46b2-e18a-4dd7-9a8b-56e2c8c3f215.png)
+![image](https://user-images.githubusercontent.com/36628203/127375016-4099d8c7-eaa5-495a-98c5-3b07f04743dc.png)
 
 We can obtain a similar level of detail in Azure Machine Learning Studio:  
-![image](https://user-images.githubusercontent.com/36628203/126878877-0bad4b13-378e-41df-9dec-8702c84680e2.png)
+![image](https://user-images.githubusercontent.com/36628203/127385430-bd4e8363-7bac-4f45-ae6f-a59c412b3fd8.png)  
+The detail of the child run that achieved the maximum accuracy can be obtained by clicking on the run number (Run 33, in our case below):  
+![image](https://user-images.githubusercontent.com/36628203/127385545-9893dd36-c78b-4d6c-a3ec-0dbd1d9322c2.png)
+The details of run 33 give us the optimized Hyperparameters, as well as a remind of the accuracy:  
+![image](https://user-images.githubusercontent.com/36628203/127385749-525cb69f-9353-4531-8953-aedda3926186.png)  
+the tab "Metrics" provide the same details in a more graphical manner:  
+![image](https://user-images.githubusercontent.com/36628203/127385851-945fa459-9662-4270-bb9c-91af713d8d32.png)
+
+
 
 **Improvements**  
 It seems that we reached a "plateau" using a Logistics Regression model.   
@@ -288,6 +296,8 @@ but it seems improbable that we will get an accuracy greater than the one determ
 ### Saving & Registering
 The code below registers the model optimized by HyperDrive, even if it's clear that's not going to be the one we will deploy in the next section:  
 ![image](https://user-images.githubusercontent.com/36628203/126879168-1d6fac8d-7364-425b-8a65-253e27d1fbc6.png)
+The result is visible in AML Studio:  
+![image](https://user-images.githubusercontent.com/36628203/127386028-acc9eee0-8fb3-45b1-8eba-e8956d12587f.png)
 
 
 
