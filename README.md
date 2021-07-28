@@ -258,7 +258,10 @@ All runs that fall outside the slack factor with respect to the best performing 
 **Note on setting values for the 'Inverse of regularization strength' ("C") and 'max_iter'**  
 > I started from the default value of each of those settings, ie. '1' for "C" and '100' for 'max_iter'.    
 > C is a continuous variable, so I chose to let Hyperdrive pick float values in a range centered on 1, and with values distributed according to a uniform law.  
-> for max_iter, as we are dealing with integers (maximum number of iterations taken for the solvers to converge), I let Hyperdrive pick integer values in a range centered on the default value again (100 +/-50). 
+> for max_iter, as we are dealing with integers (maximum number of iterations taken for the solvers to converge), I let Hyperdrive pick integer values in a range centered on the default value again (100 +/-50).  
+> The types of parameters and their respective ranges used for the hyperparamters search can be seen directly on the HyperDrive run, as shown below:  
+> ![image](https://user-images.githubusercontent.com/36628203/127387302-f3899c7e-edc1-4c19-9a02-415f775f5a71.png)
+
 
 ### 3. HyperDrive run configuration  
 This configuration object aggregates the settings defined for the policy, the choice of estimator and the hyper-parameters space definition.  
