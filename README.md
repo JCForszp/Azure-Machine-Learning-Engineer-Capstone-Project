@@ -276,7 +276,6 @@ The RunDetails widget allow to see the accuracy per child run (on the left side,
 ![image](https://user-images.githubusercontent.com/36628203/127375016-4099d8c7-eaa5-495a-98c5-3b07f04743dc.png)
 
 We can obtain a similar level of detail in Azure Machine Learning Studio:  
-![image](https://user-images.githubusercontent.com/36628203/127385430-bd4e8363-7bac-4f45-ae6f-a59c412b3fd8.png)  
 The detail of the child run that achieved the maximum accuracy can be obtained by clicking on the run number (Run 33, in our case below):  
 ![image](https://user-images.githubusercontent.com/36628203/127385545-9893dd36-c78b-4d6c-a3ec-0dbd1d9322c2.png)
 The details of run 33 give us the optimized Hyperparameters, as well as a remind of the accuracy:  
