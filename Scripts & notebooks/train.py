@@ -11,7 +11,7 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
 # Create TabularDataset using TabularDatasetFactory
-ds = TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/JCForszp/nd00333-capstone/master/Datasets/heart_failure_clinical_records_dataset.csv")
+ds = TabularDatasetFactory.from_delimited_files(path="https://raw.githubusercontent.com/JCForszp/Azure-Machine-Learning-Engineer-Capstone-Project/master/Datasets/heart_failure_clinical_records_dataset.csv")
 df=ds.to_pandas_dataframe()
 
 # Data columns
